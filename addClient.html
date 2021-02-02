@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Автопарк - Добавление клиента</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>	
+	<header class="main-header">
+		<div class="container">
+			<div class="logo">
+				<img src="img/logo.jpg" width="100" height="100" alt="logos">
+			</div>
+			<form action="clients.php">
+				<input class="btn btn-left" type="submit" value="Назад">
+			</form>
+		</div>
+	</header>
+	
+	<section class="main-part">
+		<div class="container">
+			<form action="clients.php" method="POST">
+				<table class="update-table">
+					<tr>
+						<td class="title">Название организации</td>
+						<td><input type="text" name="name" required></td>
+					</tr>
+					<tr>
+						<td class="title">Адрес</td>
+						<td><input type="text" name="address" required></td>
+					</tr>
+				</table>
+				<input class="btn btn-right" type="submit" value="Сохранить">
+			</form>
+		</div>
+	</section>
+	<footer class="main-footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="footer-address">
+					<p>197101, г. Санкт-Петербург,<br> наб. Песочная, д. 14</p>
+				</div>
+			</div>
+		</div>
+    </footer>
+	</body>
+<html>
