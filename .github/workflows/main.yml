@@ -19,7 +19,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2.3.1
         with:
           key: "${{ secrets.MY_KEY }}"
-          known_hosts: ""
+          known_hosts: "just placeholder"
           
       - name: Generate auth hosts
         # в этом шаге мы добавляем наш продовый сервер
