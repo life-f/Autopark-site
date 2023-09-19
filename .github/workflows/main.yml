@@ -27,4 +27,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       # Сама заливка (синхронизация)
-      - run: rsync --archive --compress --progress . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/test/}
+      - run: rsync --archive --compress --progress . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/test/
