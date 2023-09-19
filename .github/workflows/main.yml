@@ -3,7 +3,7 @@ name: Deploy
 on: #условия выполнения этого кода
   push: # при пуше
     branches: # в следующие ветки:
-      - main 
+      - master
 
 
 jobs:
