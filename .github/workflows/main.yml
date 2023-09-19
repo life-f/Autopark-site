@@ -1,0 +1,30 @@
+name: Deploy
+
+on: #условия выполнения этого кода
+  push: # при пуше
+    branches: # в следующие ветки:
+      - main 
+
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Установка SSH-ключа для доступа к серверу.
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.3.1
+        with:
+          key: "${{ secrets.MY_KEY }}"
+          known_hosts: ""
+          
+      - name: Generate auth hosts
+        # в этом шаге мы добавляем наш продовый сервер
+        # в разрешенные на текущем (от GitHub) для беспробленой заливки
+        run: ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      # Сама заливка (синхронизация)
+      - run: rsync --archive --compress --progress . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/path/to/your/site/}
